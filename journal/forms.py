@@ -1,7 +1,7 @@
-#import os
+import os
 
 from django import forms
-#from django.core.mail import EmailMessage
+from django.core.mail import EmailMessage
 
 
 class InquiryForm(forms.Form):
@@ -25,7 +25,7 @@ class InquiryForm(forms.Form):
         self.fields['message'].widget.attrs['class'] = 'form-control'
         self.fields['message'].widget.attrs['placeholder'] = 'メッセージをここに入力してください。'
 
-    '''def send_email(self):
+    def send_email(self):
         name = self.cleaned_data['name']
         email = self.cleaned_data['email']
         title = self.cleaned_data['title']
@@ -42,4 +42,4 @@ class InquiryForm(forms.Form):
         ]
 
         message = EmailMessage(subject=subject, body=message, from_email=from_email, to=to_list, cc=cc_list)
-        message.send()'''
+        message.send()
