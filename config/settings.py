@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'journal.apps.JournalConfig'
+    'journal.apps.JournalConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
     messages.SUCCESS: 'alert alert-success',
     messages.INFO: 'alert alert-info',
 }'''
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
