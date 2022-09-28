@@ -28,7 +28,7 @@
 <!-- use "theme-invert" class on bright backgrounds, also try "text-shadows" class -->
 <body class="theme-invert">
 <div id="wrapper">
-
+	<a class="nav-link" href="{% url 'journal:inquiry' %}">INQUIRY</a>
 <nav class="mainmenu">
 	<div class="container">
 		<div class="dropdown">
@@ -38,7 +38,7 @@
 			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 				<li class="nav-item"><a href="#head" class="active">Hello</a></li>
 				<!--<li><a href="#about">About me</a></li>-->
-				<li class="nav-item"><a class="nav-link {% block active_inquiry %}{% endblock %}"href="#">INQUIRY</a></li>
+				<li class="nav-item"><a class="nav-link {% block active_inquiry %}{% endblock %}" href="{% url 'journal:inquiry' %}">INQUIRY</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Sign Up</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Log In</a></li>
 				  <!--<li><a href="#contact">Get in touch</a></li>-->
