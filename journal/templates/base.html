@@ -179,6 +179,21 @@
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <script src="{% static 'assets/js/modernizr.custom.72241.js' %}"></script>
 {% block herder %}{% endblock %}
+
+        <!---{% if messages %}
+          <div class="container my-div-style">
+              <div class="row">
+                  <ul class="messages" style="list-style: none;">
+                      {% for message in messages %}
+                      <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                          {{ message }}
+                      </li>
+                      {% endfor %}
+                  </ul>          
+              </div>
+          </div>
+        {% endif %}-->
+
 {%block contents%}{% endblock %}
 <!-- Custom template scripts -->
 <script src="{% static 'assets/js/magister.js' %}"></script>
