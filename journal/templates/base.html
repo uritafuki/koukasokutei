@@ -20,7 +20,9 @@
 	<!-- Fonts -->
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
-    {% block head %}{% endblock %}
+    <!--MyStyle-->
+	
+	{% block head %}{% endblock %}
 </head>
 
 <!-- use "theme-invert" class on bright backgrounds, also try "text-shadows" class -->
@@ -30,14 +32,16 @@
 <nav class="mainmenu">
 	<div class="container">
 		<div class="dropdown">
-            <a calss="navbar-brand" href="{% url 'journal:index' %}">PPPPPPPP</a>
-			<button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-			<!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
+			<button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+			<!--<a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
+			<a class="navbar-brand" href="{% url 'journal:index' %}">PRIVATE DIARY</a>
 			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-				<li><a href="#head" class="active">Hello</a></li>
-				<li><a href="#about">About me</a></li>
-				<li><a href="#themes">Themes</a></li>
-				<li><a href="#contact">Get in touch</a></li>
+				<li class="nav-item"><a href="#head" class="active">Hello</a></li>
+				<!--<li><a href="#about">About me</a></li>-->
+				<li class="nav-item"><a class="nav-link {% block active_inquiry %}{% endblock %}"href="#">INQUIRY</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Sign Up</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Log In</a></li>
+				  <!--<li><a href="#contact">Get in touch</a></li>-->
 			</ul>
 		</div>
 	</div>
@@ -174,6 +178,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <script src="{% static 'assets/js/modernizr.custom.72241.js' %}"></script>
+
 <!-- Custom template scripts -->
 <script src="{% static 'assets/js/magister.js' %}"></script>
 </body>
