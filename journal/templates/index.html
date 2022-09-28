@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
+{%extends 'base.html'%}
+
+{% load static %}
+
+
+{% block title %}Web上にあなた専用の日記ページを保存できるサービス | Private Diary{% endblock %}
+
+{% block header%}
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
@@ -20,7 +30,9 @@
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
 </head>
+{% endblock %}
 
+{% block contents %}
 <!-- use "theme-invert" class on bright backgrounds, also try "text-shadows" class -->
 <body class="theme-invert">
 
@@ -173,3 +185,4 @@
 <script src="assets/js/magister.js"></script>
 </body>
 </html>
+{% endblock %}
