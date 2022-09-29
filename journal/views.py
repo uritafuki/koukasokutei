@@ -28,7 +28,7 @@ class JournalListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 2
 
     def get_queryset(self):
-        #diaries = Journal.objects.filter(user=self.request.user).order_by('-created_at')
+        diaries = Journal.objects.filter(user=self.request.user).order_by('-created_at')
         return diaries
 
 
@@ -39,7 +39,7 @@ class JournalListView(LoginRequiredMixin, generic.ListView):
         return super().form_valid(form)
 
 
-class JournalDetailView(LoginRequiredMixin, OnlyYouMixin, generic.DetailView):
+class JournalDetailView(LoginRequiredMixin, generic.DetailView):
     model = Journal
     template_name = 'journal_detail.html'
 
@@ -62,7 +62,7 @@ class JournalCreateView(LoginRequiredMixin, generic.CreateView):
         return super().form_invalid(form)
 
 
-class JournalUpdateView(LoginRequiredMixin, OnlyYouMixin, generic.UpdateView):
+class JournalUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Journal
     template_name = 'journal_update.html'
     form_class = JournalCreateForm
@@ -79,7 +79,7 @@ class JournalUpdateView(LoginRequiredMixin, OnlyYouMixin, generic.UpdateView):
         return super().form_invalid(form)
 
 
-class JournalDeleteView(LoginRequiredMixin, OnlyYouMixin, generic.DeleteView):
+class JournalDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Journal
     template_name = 'journal_delete.html'
     success_url = reverse_lazy('journal:journal_list')
