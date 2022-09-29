@@ -18,7 +18,7 @@
             </div>
             {% for journal in journal_list %}
             <div class="post-preview">
-                <a href="{% url 'journal:journal_detail' jouranal.pk %}">
+                <a href="{% url 'journal:journal_detail' journal.pk %}">
                     <h2 class="post-title">
                         {{ journal.title }}
                     </h2>
